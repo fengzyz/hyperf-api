@@ -11,6 +11,7 @@ namespace App\Controller;
 use Hyperf\HttpServer\Annotation\AutoController;
 
 
+
 /**
  * @AutoController
  * Class GrpcController
@@ -38,7 +39,7 @@ class GrpcController extends Controller
         $user = $reply->getUser();
 
         $client->close();
-        var_dump(memory_get_usage(true));
+        var_dump($user);
         return $message;
     }
 }
