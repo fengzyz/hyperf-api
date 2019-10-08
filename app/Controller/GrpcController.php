@@ -39,7 +39,6 @@ class GrpcController extends Controller
         $user = $reply->getUser();
 
         $client->close();
-        var_dump($user);
         return $message;
     }
 }

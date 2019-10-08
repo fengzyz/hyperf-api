@@ -11,7 +11,5 @@ declare(strict_types=1);
  */
 
 return [
-    'dependencies' => [
-        \Hyperf\Crontab\Strategy\StrategyInterface::class => \App\Crontab\Strategy\FooStrategy::class,
-    ],
+    \Hyperf\Crontab\Strategy\StrategyInterface::class => \App\Crontab\Strategy\FooStrategy::class,
 ];
