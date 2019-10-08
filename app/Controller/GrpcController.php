@@ -11,7 +11,6 @@ namespace App\Controller;
 use Hyperf\HttpServer\Annotation\AutoController;
 
 
-
 /**
  * @AutoController
  * Class GrpcController

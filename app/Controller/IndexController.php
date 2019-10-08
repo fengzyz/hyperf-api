@@ -11,11 +11,13 @@ declare(strict_types=1);
  */
 
 namespace App\Controller;
+use App\Request\FooRequest;
 
 class IndexController extends Controller
 {
-    public function index()
+    public function index(FooRequest $request)
     {
+        //$validated = $request->validated();
         $user = $this->request->input('user', 'Hyperf');
         $method = $this->request->getMethod();
 
