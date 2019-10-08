@@ -13,7 +13,7 @@ use Hyperf\Validation\ValidationExceptionHandler;
 return [
     'handler' => [
         'http' => [
-            //App\Exception\Handler\AppExceptionHandler::class,
+            App\Exception\Handler\AppExceptionHandler::class,
             ValidationExceptionHandler::class,
         ],
     ],

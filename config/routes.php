@@ -15,6 +15,7 @@ use App\Middleware\CorsMiddleware;
 
 Router::addRoute(['GET', 'POST', 'HEAD'], '/', 'App\Controller\IndexController@index');
 
+Router::addRoute(['GET', 'POST', 'HEAD'], '/test', 'App\Controller\IndexController@test');
 // 该 Group 下的所有路由都将应用配置的中间件
 Router::addGroup(
     '/v1', function () {
@@ -23,6 +24,10 @@ Router::addGroup(
     },
     ['middleware' => [CorsMiddleware::class]]
 );
+
+Router::addServer('ws', function () {
+    Router::get('/', 'App\Controller\WebSocketController');
+});
 
 Router::addServer('grpc', function () {
     Router::addGroup('/grpc.hi', function () {
