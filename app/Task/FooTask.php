@@ -19,7 +19,7 @@ class FooTask
 {
     /**
      * @Inject()
-     * @var \Hyperf\Contract\StdoutLoggerInterface
+     * @var StdoutLoggerInterface
      */
     private $logger;
 
