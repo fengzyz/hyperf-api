@@ -10,7 +10,6 @@ namespace App\Controller\Api\V1;
 use Hyperf\HttpServer\Annotation\Controller;
 use Hyperf\HttpServer\Annotation\RequestMapping;
 use App\Controller\Controller as BaseController;
-use Hyperf\Config\Config;
 
 /**
  * @Controller()
