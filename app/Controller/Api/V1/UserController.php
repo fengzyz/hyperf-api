@@ -10,7 +10,8 @@ namespace App\Controller\Api\V1;
 use Hyperf\HttpServer\Annotation\Controller;
 use Hyperf\HttpServer\Annotation\RequestMapping;
 use App\Controller\Controller as BaseController;
-
+use App\Service\UserService;
+use Hyperf\Di\Annotation\Inject;
 /**
  * @Controller()
  * Class UserController
@@ -18,7 +19,11 @@ use App\Controller\Controller as BaseController;
  */
 class UserController extends BaseController
 {
-
+    /**
+     * @Inject
+     * @var UserService
+     */
+    protected $userService;
     public function index(){
         $user = $this->request->input('user', 'Hyperf');
         $method = $this->request->getMethod();
@@ -31,7 +36,16 @@ class UserController extends BaseController
     /**
      *
      */
-    public function login(){
+    public function login(LoginRequest $request){
+        $code = (string) $request->input('code');
+        [$token, $user] = $this->userService->login($code);
+
+        return $this->response->success([
+            'token' => $token,
+            'user' => UserFormatter::instance()->base($user),
+        ]);
+
+
 
 
         $username = $this->request->input('username');

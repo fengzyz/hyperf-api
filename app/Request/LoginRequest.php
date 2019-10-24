@@ -7,11 +7,9 @@
  */
 
 namespace App\Request;
-
-
 use Hyperf\Validation\Request\FormRequest;
 
-class CodeRequest extends FormRequest
+class LoginRequest extends FormRequest
 {
     public function authorize(): bool
     {
@@ -21,7 +19,7 @@ class CodeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'code' => 'required|max:255',
+            'code' => 'required',
         ];
     }
 

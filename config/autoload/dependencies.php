@@ -12,4 +12,5 @@ declare(strict_types=1);
 
 return [
     \Hyperf\Crontab\Strategy\StrategyInterface::class => \App\Crontab\Strategy\FooStrategy::class,
+
 ];

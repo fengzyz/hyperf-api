@@ -7,7 +7,7 @@
  */
 
 namespace App\Controller\Api\V1;
-use App\Request\CodeRequest;
+use App\Request\LoginRequest;
 use Hyperf\Config\Annotation\Value;
 use Hyperf\HttpServer\Annotation\Controller;
 use Hyperf\HttpServer\Annotation\RequestMapping;
@@ -38,7 +38,7 @@ class WechatController extends BaseController
      * @RequestMapping(path="login", methods="get,post")
      * 用户登录
      */
-    public function login(CodeRequest $request){
+    public function login(LoginRequest $request){
         $validated = $request->validated();
         if($validated){
             return "验证成功!";
